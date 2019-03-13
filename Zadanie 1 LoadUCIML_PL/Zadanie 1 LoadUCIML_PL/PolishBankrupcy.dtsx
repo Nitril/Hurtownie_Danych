@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="PolishBankrupcy"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{DD4C5C95-4C5C-49AE-BF0C-A1B3475C97FC}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{82AFB4EF-E679-4A83-A725-98767B78F55D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3191,7 +3191,7 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{EA665B5D-62A4-48F5-9211-23563264708A}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="Insert INTO dbo.PackageLogs ([Updated], [User], [PackageName])  values(?,?,?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="Insert INTO dbo.PackageLogs ([Updated], [User], [PackageName], [UpdatedGetDate])  values(?,?,?,GetDate())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="System::StartTime"
@@ -3247,7 +3247,7 @@
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task"
-          TopLeft="402,163" />
+          TopLeft="422,57" />
         <NodeLayout
           Size="163,42"
           Id="Package\Execute SQL Task"
@@ -3255,33 +3255,21 @@
         <NodeLayout
           Size="172,42"
           Id="Package\Execute SQL Task 1"
-          TopLeft="679,262" />
+          TopLeft="643,56" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="247.5,97">
+          TopLeft="329,77">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="230,66"
+              EndConnector="93,0"
               Start="0,0"
-              End="230,58.5">
+              End="85.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29"
-                    Point2="0,33"
-                    Point3="4,33" />
-                  <mssgle:LineSegment
-                    End="226,33" />
-                  <mssgle:CubicBezierSegment
-                    Point1="226,33"
-                    Point2="230,33"
-                    Point3="230,37" />
-                  <mssgle:LineSegment
-                    End="230,58.5" />
+                    End="85.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3292,30 +3280,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="477.5,205">
+          TopLeft="573,77.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="287.5,57"
+              EndConnector="70,0"
               Start="0,0"
-              End="287.5,49.5">
+              End="62.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.5"
-                    Point2="0,28.5"
-                    Point3="4,28.5" />
-                  <mssgle:LineSegment
-                    End="283.5,28.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="283.5,28.5"
-                    Point2="287.5,28.5"
-                    Point3="287.5,32.5" />
-                  <mssgle:LineSegment
-                    End="287.5,49.5" />
+                    End="62.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
