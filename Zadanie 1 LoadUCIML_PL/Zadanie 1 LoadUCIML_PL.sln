@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Zadanie 1 LoadUCIML_PL", "Zadanie 1 LoadUCIML_PL\Zadanie 1 LoadUCIML_PL.dtproj", "{8B36E58C-1903-47E0-8DE9-71B5081BF577}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B36E58C-1903-47E0-8DE9-71B5081BF577}.Development|Default.ActiveCfg = Development
+		{8B36E58C-1903-47E0-8DE9-71B5081BF577}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F7D3E57-7778-43F8-8294-07B8CBBBEE77}
+	EndGlobalSection
+EndGlobal
