@@ -21,7 +21,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="OSG"
-          DTS:DTSID="{232A6405-BD6E-4F9D-B2B4-DD5607B48CBF}"
+          DTS:DTSID="{58FB7393-BA46-4FDF-99B9-C91092575222}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="PSG"
-          DTS:DTSID="{F103FAC4-4D3A-4FEC-8E06-6EC2CABF222E}"
+          DTS:DTSID="{33569E6C-9693-4C77-A2FD-FE600719E964}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Obywatelstwo"
-          DTS:DTSID="{EBC0E303-4F5B-405D-92F5-D1B95113B760}"
+          DTS:DTSID="{5AE9C4EF-A795-40D1-B8D5-FC7F01454430}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Symbol"
-          DTS:DTSID="{4536B6D4-7D28-4C83-9BF1-A3BE0B72A467}"
+          DTS:DTSID="{311788B3-AB04-461D-9CBC-2D93D12CCC14}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
           DTS:DataPrecision="18"
           DTS:TextQualified="True"
           DTS:ObjectName="Wydanie wizy Schengen, Zasięg terytorialny - Państwa Schengen"
-          DTS:DTSID="{3801D180-BE02-42B6-8225-E05EFD7E5FE9}"
+          DTS:DTSID="{C3F6D864-BD9C-4429-A5B3-67375F8D4D26}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
           DTS:DataPrecision="18"
           DTS:TextQualified="True"
           DTS:ObjectName="Wydanie wizy Schengen, Zasięg terytorialny - Polska"
-          DTS:DTSID="{D7CCAB8F-EE6C-4A21-B646-7A9A2C79ACDB}"
+          DTS:DTSID="{B73DD5BE-EE52-4E4C-8D37-85800C8EB287}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
           DTS:DataPrecision="18"
           DTS:TextQualified="True"
           DTS:ObjectName="Zastąpienie naklejki wizowej, Rodzaj wizy - VD"
-          DTS:DTSID="{24BF5ECA-63EB-42D6-AB0C-5BA9761A2A1A}"
+          DTS:DTSID="{4E9CF639-45FD-41F6-AA8B-4E3A35AEEFF1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
           DTS:DataPrecision="18"
           DTS:TextQualified="True"
           DTS:ObjectName="Zastąpienie naklejki wizowej, Rodzaj wizy - VC"
-          DTS:DTSID="{4B35AA46-C3B0-4DCF-8035-36FC062C2522}"
+          DTS:DTSID="{7C6328AA-29FB-4796-8798-6AD2B28D7394}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
