@@ -1,0 +1,144 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="AirQualityCSV"
+  DTS:DTSID="{10AFA62A-E097-447F-BD56-5FE539CCBE49}"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1033"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:ColumnNamesInFirstDataRow="True"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x003C_none_x003E_"
+      DTS:CodePage="1250"
+      DTS:ConnectionString="D:\Users\karol.szarek\source\repos\Nitril\Hurtownie_Danych\Zadanie 1 LoadUCIML_PL\Zadanie 1 LoadUCIML_PL\Files\AirQualityUCI.csv">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="10"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Date"
+          DTS:DTSID="{0DD17A4A-4DBC-4F84-8B08-36B8C4685720}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="8"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Time"
+          DTS:DTSID="{A7028B57-EA79-4844-A488-4AC9420E5CF3}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="20"
+          DTS:TextQualified="True"
+          DTS:ObjectName="CO(GT)"
+          DTS:DTSID="{3DC8C1F6-6A2B-412E-95ED-29D1BD542A35}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="20"
+          DTS:TextQualified="True"
+          DTS:ObjectName="PT08S1(CO)"
+          DTS:DTSID="{14A1E72F-F32D-4993-800E-2F69BBF81814}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="20"
+          DTS:TextQualified="True"
+          DTS:ObjectName="NMHC(GT)"
+          DTS:DTSID="{591A2244-5B56-4308-BBF1-C6253C83CC57}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="4"
+          DTS:TextQualified="True"
+          DTS:ObjectName="C6H6(GT)"
+          DTS:DTSID="{2E044296-F4B9-46C8-A189-654BC9569527}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="20"
+          DTS:TextQualified="True"
+          DTS:ObjectName="PT08 S2(NMHC)"
+          DTS:DTSID="{4C77073E-20D3-4D54-9F2B-7DD1F0CEA34D}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="20"
+          DTS:TextQualified="True"
+          DTS:ObjectName="NOx(GT)"
+          DTS:DTSID="{6DE2DBFF-2491-41AD-AE52-84D47865A86A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="20"
+          DTS:TextQualified="True"
+          DTS:ObjectName="PT08 S3(NOx)"
+          DTS:DTSID="{0E475B4B-AF56-414A-B3CC-EA76E0420929}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="20"
+          DTS:TextQualified="True"
+          DTS:ObjectName="NO2(GT)"
+          DTS:DTSID="{BD846AED-D182-4171-9F1C-2D40098C6ACE}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="20"
+          DTS:TextQualified="True"
+          DTS:ObjectName="PT08S4(NO2)"
+          DTS:DTSID="{E4740F3F-F30D-433B-ABEC-D024227DB74E}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="20"
+          DTS:TextQualified="True"
+          DTS:ObjectName="PT08S5(O3)"
+          DTS:DTSID="{DEEDD9A9-3E13-4701-B0B7-9D2631665A73}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="4"
+          DTS:TextQualified="True"
+          DTS:ObjectName="T"
+          DTS:DTSID="{8633640D-ADB0-4D5D-8EE5-82C949866DF2}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="4"
+          DTS:TextQualified="True"
+          DTS:ObjectName="RH"
+          DTS:DTSID="{54E9C741-205F-4803-ABB2-C58D3A7247F7}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:DataType="131"
+          DTS:DataPrecision="10"
+          DTS:DataScale="5"
+          DTS:TextQualified="True"
+          DTS:ObjectName="AH"
+          DTS:DTSID="{1C285754-706E-45A0-960F-5A7332A46069}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
