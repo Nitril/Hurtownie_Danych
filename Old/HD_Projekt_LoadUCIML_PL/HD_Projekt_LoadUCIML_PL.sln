@@ -7,6 +7,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "LoadUCIML_PL_DB", "LoadUCIM
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "LoadUCIML_PL_ETL", "LoadUCIML_PL_ETL\LoadUCIML_PL_ETL.dtproj", "{4EB96937-8791-4269-9767-DD6C1AB26CB8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSV Files", "CSV Files", "{39B9F3A2-EB1D-43E7-8BA3-221136FD2A7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
