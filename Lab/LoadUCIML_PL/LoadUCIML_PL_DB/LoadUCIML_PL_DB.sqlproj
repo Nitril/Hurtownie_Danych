@@ -64,5 +64,6 @@
     <Build Include="dbo\Tables\PackageLogs.sql" />
     <Build Include="dbo\Tables\BalanceScale.sql" />
     <Build Include="dbo\Tables\Abalon.sql" />
+    <Build Include="dbo\Tables\CensusAdult.sql" />
   </ItemGroup>
 </Project>

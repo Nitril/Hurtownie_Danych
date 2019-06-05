@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="OverPackage"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{1BFB96D1-E1BE-4460-964C-8DC84CCEB37E}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{5A15094B-7881-40A8-94A3-DF88357547A5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -336,7 +336,7 @@
         <NodeLayout
           Size="163,42"
           Id="Package\Execute SQL Task"
-          TopLeft="207,141" />
+          TopLeft="404,265" />
         <NodeLayout
           Size="183,42"
           Id="Package\Sequence Container\Execute Package Task"
@@ -351,25 +351,25 @@
           TopLeft="5.5,3.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="613,100"
-          Size="196,43"
+          IsExpanded="True"
+          PanelSize="592,105"
+          Size="592,148"
           Id="Package\Sequence Container"
           TopLeft="197,23" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="291.75,66">
+          TopLeft="489.25,171">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,75"
+              EndConnector="0,94"
               Start="0,0"
-              End="0,67.5">
+              End="0,86.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,67.5" />
+                    End="0,86.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="PolishBankrupcy"
   DTS:PackageType="5"
-  DTS:VersionBuild="41"
-  DTS:VersionGUID="{82AFB4EF-E679-4A83-A725-98767B78F55D}">
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{3AD58776-087A-49D7-B3C4-489383ECDB14}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

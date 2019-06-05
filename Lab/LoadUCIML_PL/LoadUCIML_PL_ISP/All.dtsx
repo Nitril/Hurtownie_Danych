@@ -11,12 +11,29 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="All"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{68B93741-7680-4E26-A20A-02B91F55BF69}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{7F7FDA70-FBD0-4E3C-9355-395D11D510E5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute CensusAdult"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{25ADC92B-965E-42CF-AB01-0EA28CA17BEC}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute CensusAdult"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>CensusAdult.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\ExecuteAbalon"
       DTS:CreationName="Microsoft.ExecutePackageTask"
@@ -65,13 +82,17 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
+          Size="192,42"
+          Id="Package\ExecuteAbalon"
+          TopLeft="97,125" />
+        <NodeLayout
           Size="183,42"
           Id="Package\ExecuteBalanceScale"
           TopLeft="365,122" />
         <NodeLayout
-          Size="192,42"
-          Id="Package\ExecuteAbalon"
-          TopLeft="97,125" />
+          Size="177,42"
+          Id="Package\Execute CensusAdult"
+          TopLeft="689,128" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
