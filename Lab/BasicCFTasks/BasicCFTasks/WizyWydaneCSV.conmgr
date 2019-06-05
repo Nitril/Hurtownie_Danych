@@ -18,37 +18,37 @@
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x003B_"
           DTS:MaximumWidth="10"
-          DTS:DataType="129"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="OSG"
-          DTS:DTSID="{59449FD3-1B1D-431A-8D25-6EA34F419E58}"
+          DTS:DTSID="{303748BE-C822-48B7-9E94-A44B0C2AC01B}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x003B_"
           DTS:MaximumWidth="30"
-          DTS:DataType="129"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="PSG"
-          DTS:DTSID="{EA0FB14F-545C-42D4-934F-66BD283001D9}"
+          DTS:DTSID="{B23FC96B-87BF-489C-80AA-2BCA36F4C9DA}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x003B_"
           DTS:MaximumWidth="30"
-          DTS:DataType="129"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Obywatelstwo"
-          DTS:DTSID="{8DADE874-8F5B-4C29-8569-45F7B5C6BCA5}"
+          DTS:DTSID="{B650268D-8587-405B-BC83-FA77BBD8F68D}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x003B_"
           DTS:MaximumWidth="2"
-          DTS:DataType="129"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Symbol"
-          DTS:DTSID="{270F09B1-71CD-4D0E-9027-B4CA6DB89A7D}"
+          DTS:DTSID="{4BAEA607-C4BD-452A-97A9-15F6FA309136}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="WydanieWizySchengenPanstwaSchengen"
-          DTS:DTSID="{A825654F-F530-40C7-8651-5829F7CAB759}"
+          DTS:DTSID="{67DDD63F-9DE8-41DF-AA61-BEB955D61018}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -64,7 +64,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="WydanieWizySchengenPolska"
-          DTS:DTSID="{89218DF2-090C-44A8-8694-DDBE03A531EB}"
+          DTS:DTSID="{9DD1DAA7-5B05-45EC-8E32-10F72D145034}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -72,7 +72,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="ZastapienieNaklejkiWizowejWizaVD"
-          DTS:DTSID="{02F3881A-5BFD-419B-8F27-6698C2EC1430}"
+          DTS:DTSID="{B3C0444C-A8AE-46E0-992F-350B0C5D9FE8}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -80,7 +80,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="ZastapienieNaklejkiWizowejWizaVC"
-          DTS:DTSID="{2578FF52-DAA7-4C31-BF1C-3CDB86599CC7}"
+          DTS:DTSID="{64D079C0-C075-4F47-B13A-ADD674E25148}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
