@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="LoadDimStore_SCD2"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{16797AF0-12E8-43CB-977E-AD52832322C4}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{C81BE2A1-3820-4E17-9DBD-EB4F4F3D5425}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -323,13 +323,13 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">(#{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[New_StoreName]} != #{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[Old_StoreName]}) || (#{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[New_StoreDescription]} != #{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[Old_StoreDescription]}) || (#{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[New_Status]} != #{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[Old_Status]}) || (#{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[Old_GeographyKey]} != #{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[New_GeographyKey]}) || (#{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[Old_StoreManager]} != #{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[New_ManagerKey]})</property>
+                      name="Expression">(#{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[New_StoreName]} != #{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[Old_StoreName]}) || (#{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[New_StoreDescription]} != #{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[Old_StoreDescription]}) || (#{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[New_Status]} != #{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[Old_Status]}) || (#{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[Old_GeographyKey]} != #{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[New_GeographyKey]}) || (#{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[Old_StoreManager]} != #{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[New_ManagerKey]}) || (#{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[Old_Status]} != #{Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[New_Status]})</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">(New_StoreName != Old_StoreName) || (New_StoreDescription != Old_StoreDescription) || (New_Status != Old_Status) || (Old_GeographyKey != New_GeographyKey) || (Old_StoreManager != New_ManagerKey)</property>
+                      name="FriendlyExpression">(New_StoreName != Old_StoreName) || (New_StoreDescription != Old_StoreDescription) || (New_Status != Old_Status) || (Old_GeographyKey != New_GeographyKey) || (Old_StoreManager != New_ManagerKey) || (Old_Status != New_Status)</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -1540,11 +1540,11 @@
                       externalMetadataColumnId="Package\Data Flow Task\InsertNewRows (Updated).Inputs[OLE DB Destination Input].ExternalColumns[Status]"
                       lineageId="Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[New_Status]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\InsertNewRows (Updated).Inputs[OLE DB Destination Input].Columns[Old_OpenDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Old_OpenDate"
+                      refId="Package\Data Flow Task\InsertNewRows (Updated).Inputs[OLE DB Destination Input].Columns[PckgStartTime]"
+                      cachedDataType="date"
+                      cachedName="PckgStartTime"
                       externalMetadataColumnId="Package\Data Flow Task\InsertNewRows (Updated).Inputs[OLE DB Destination Input].ExternalColumns[OpenDate]"
-                      lineageId="Package\Data Flow Task\Join OldAndNew Data.Outputs[Merge Join Output].Columns[Old_OpenDate]" />
+                      lineageId="Package\Data Flow Task\AddStartTime.Outputs[Derived Column Output].Columns[PckgStartTime]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -6125,7 +6125,7 @@ WHERE [StoreKey] = ?
         <NodeLayout
           Size="203,42"
           Id="Package\Data Flow Task\InsertNewRows (Updated)"
-          TopLeft="439,1517" />
+          TopLeft="541,1652" />
         <NodeLayout
           Size="132,42"
           Id="Package\Data Flow Task\FFS Obszar"
@@ -6141,7 +6141,7 @@ WHERE [StoreKey] = ?
         <NodeLayout
           Size="152,42"
           Id="Package\Data Flow Task\InsertNewRows"
-          TopLeft="41,1524" />
+          TopLeft="32,1654" />
         <NodeLayout
           Size="190,42"
           Id="Package\Data Flow Task\Main Sort EmployeeKey"
@@ -6173,7 +6173,7 @@ WHERE [StoreKey] = ?
         <NodeLayout
           Size="120,42"
           Id="Package\Data Flow Task\Multicast"
-          TopLeft="451,1308" />
+          TopLeft="441,1366" />
         <NodeLayout
           Size="113,42"
           Id="Package\Data Flow Task\Lookup"
@@ -6193,7 +6193,7 @@ WHERE [StoreKey] = ?
         <NodeLayout
           Size="145,42"
           Id="Package\Data Flow Task\RowStartTime"
-          TopLeft="41,1405" />
+          TopLeft="34,1505" />
         <NodeLayout
           Size="123,42"
           Id="Package\Data Flow Task\RC Insert"
@@ -6205,7 +6205,7 @@ WHERE [StoreKey] = ?
         <NodeLayout
           Size="177,42"
           Id="Package\Data Flow Task\SetDateTo GETDATE"
-          TopLeft="247,1623" />
+          TopLeft="241,1657" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[UpdateData]"
           TopLeft="416.2,1088">
@@ -6354,18 +6354,18 @@ WHERE [StoreKey] = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Row Count Output 11]"
-          TopLeft="507.75,1279">
+          TopLeft="502.75,1279">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29"
+              EndConnector="0,87"
               Start="0,0"
-              End="0,21.5">
+              End="0,79.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5" />
+                    End="0,79.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6500,25 +6500,25 @@ WHERE [StoreKey] = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="112.5,1371">
+          TopLeft="109,1371">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34"
+              EndConnector="0,134"
               Start="0,0"
-              End="0,26.5">
+              End="0,126.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5" />
+                    End="0,126.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,7.4453125,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,57.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6636,18 +6636,18 @@ WHERE [StoreKey] = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="115.25,1447">
+          TopLeft="107.25,1547">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,77"
+              EndConnector="0,107"
               Start="0,0"
-              End="0,69.5">
+              End="0,99.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.5" />
+                    End="0,99.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6871,21 +6871,21 @@ WHERE [StoreKey] = ?
         <NodeLayout
           Size="121,42"
           Id="Package\Data Flow Task\Union All"
-          TopLeft="273,1446" />
+          TopLeft="268,1523" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Row Count Output 13]"
-          TopLeft="315.583333333333,1281">
+          TopLeft="313.083333333333,1281">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,165"
+              EndConnector="0,242"
               Start="0,0"
-              End="0,157.5">
+              End="0,234.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,157.5" />
+                    End="0,234.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6896,30 +6896,30 @@ WHERE [StoreKey] = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Multicast Output 3]"
-          TopLeft="492.333333333333,1350">
+          TopLeft="482.333333333333,1408">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-140,96"
+              EndConnector="-135,115"
               Start="0,0"
-              End="-140,88.5">
+              End="-135,107.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.0063991467804" />
+                    End="0,53.5076656445807" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,44.0063991467804"
-                    Point2="0,48.0063991467804"
-                    Point3="-4,48.0063991467804" />
+                    Point1="0,53.5076656445807"
+                    Point2="0,57.5076656445807"
+                    Point3="-4,57.5076656445807" />
                   <mssgle:LineSegment
-                    End="-136,48.0063991467804" />
+                    End="-131,57.5076656445807" />
                   <mssgle:CubicBezierSegment
-                    Point1="-136,48.0063991467804"
-                    Point2="-140,48.0063991467804"
-                    Point3="-140,52.0063991467804" />
+                    Point1="-131,57.5076656445807"
+                    Point2="-135,57.5076656445807"
+                    Point3="-135,61.5076656445807" />
                   <mssgle:LineSegment
-                    End="-140,88.5" />
+                    End="-135,107.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6930,18 +6930,18 @@ WHERE [StoreKey] = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Union All Output 1]"
-          TopLeft="334.5,1488">
+          TopLeft="329,1565">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,135"
+              EndConnector="0,92"
               Start="0,0"
-              End="0,127.5">
+              End="0,84.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,127.5" />
+                    End="0,84.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6952,30 +6952,30 @@ WHERE [StoreKey] = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Multicast Output 1]"
-          TopLeft="529.666666666667,1350">
+          TopLeft="519.666666666667,1408">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.8333333333334,167"
+              EndConnector="122.833333333333,244"
               Start="0,0"
-              End="10.8333333333334,159.5">
+              End="122.833333333333,236.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,64.1184210526316" />
+                    End="0,95.5263157894737" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,64.1184210526316"
-                    Point2="0,68.1184210526316"
-                    Point3="4,68.1184210526316" />
+                    Point1="0,95.5263157894737"
+                    Point2="0,99.5263157894737"
+                    Point3="4,99.5263157894737" />
                   <mssgle:LineSegment
-                    End="6.83333333333337,68.1184210526316" />
+                    End="118.833333333333,99.5263157894737" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.83333333333337,68.1184210526316"
-                    Point2="10.8333333333334,68.1184210526316"
-                    Point3="10.8333333333334,72.1184210526316" />
+                    Point1="118.833333333333,99.5263157894737"
+                    Point2="122.833333333333,99.5263157894737"
+                    Point3="122.833333333333,103.526315789474" />
                   <mssgle:LineSegment
-                    End="10.8333333333334,159.5" />
+                    End="122.833333333333,236.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
