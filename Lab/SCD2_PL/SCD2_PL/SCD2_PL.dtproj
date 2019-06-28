@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">SILAX</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANaPaTh6dYEKGP74KpnfqwwAAAAACAAAAAAAQZgAAAAEAACAAAAAq7JEM9ro2UVh2c87qEQ4cLdAS9VPrglsL0sSuPFG5+gAAAAAOgAAAAAIAACAAAAAUIAPDpaLpu6p8Dnfj2YbA308RlI1Tt18ixKKtHUqBAJAAAADfRp0bMAuuCtfToijaedfZLxlopMTRf170h6qj4bJby8QbPyilYEhJqWjA8gmOijPiyvMXnzKyrddcWgMuU7njcAvb38UGYEmANCzk/FHd3KfKd4nBAWoihPHZOurg7dK3YSlQ7QeXsbSf6F/Dy85IeLomzcw4VJieK+atQbXFkMcwm/0IkBJ9CSHFL3JXgVhAAAAAbVvlRFGF5zYW7sOBdOu0zOyTIaFdddV7rx5dgmqqqxhQOBlN7iZ5osz0R20wr5EtQVZsMvNws4USWdWDo62BUw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANaPaTh6dYEKGP74KpnfqwwAAAAACAAAAAAAQZgAAAAEAACAAAAD1fLolXAoWkaOXp4WqKQe3LaWTnxff7uPkFn3hganunAAAAAAOgAAAAAIAACAAAAAMyyAq7v3FTZzgW7XAPbtNbc34g7gACndZi+HeeR0SmJAAAAC19D6YJhf11uJalo4m+brE2vG7QWpe55mwqa70eDebW8b+RpjSE6hR6XM4lwPYbHl+y9121sAhmzQ9cxrblSE1tWT0ERIP6uVJW/9KcjCanjNJeOUeD/eNzZqfhOJMhmffND8wIWD0VbU85MBBU2I45d06kQLsmufEmQltg1w98UrR5y/bEmYXtU2Lj4xqH99AAAAAG/6Pc3hBOcbWnyj8WJvVgr9U8SWffwBDFY9B9rxA19Pbj68Afir6huhqsUP5ManzkLb+YPBTlwvnxy21oKDRBg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -36,7 +36,7 @@
           <SSIS:ConnectionManager SSIS:Name="ObszarCSV.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="PracownikCSV.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="SklepCSV.conmgr" />
-          <SSIS:ConnectionManager SSIS:Name="LocalHost.ContosoRetailDW.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="SCD2_PL_DB.conmgr" />
         </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters>
@@ -586,7 +586,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.LocalHost.ContosoRetailDW.ConnectionString">
+            <SSIS:Parameter SSIS:Name="CM.SCD2_PL_DB.ConnectionString">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -601,7 +601,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.LocalHost.ContosoRetailDW.InitialCatalog">
+            <SSIS:Parameter SSIS:Name="CM.SCD2_PL_DB.InitialCatalog">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -616,7 +616,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.LocalHost.ContosoRetailDW.Password">
+            <SSIS:Parameter SSIS:Name="CM.SCD2_PL_DB.Password">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -630,7 +630,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.LocalHost.ContosoRetailDW.RetainSameConnection">
+            <SSIS:Parameter SSIS:Name="CM.SCD2_PL_DB.RetainSameConnection">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -645,7 +645,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.LocalHost.ContosoRetailDW.ServerName">
+            <SSIS:Parameter SSIS:Name="CM.SCD2_PL_DB.ServerName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -660,7 +660,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.LocalHost.ContosoRetailDW.UserName">
+            <SSIS:Parameter SSIS:Name="CM.SCD2_PL_DB.UserName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -682,10 +682,10 @@
                 <SSIS:Property SSIS:Name="Name">LoadDimStore_SCD2</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">18</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">46</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{666659E8-D611-401B-8DA3-D99B93082A53}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6F19D24B-9AEB-4139-A8DB-A097EDE99F58}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

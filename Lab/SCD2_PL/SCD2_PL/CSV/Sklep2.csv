@@ -1,28 +1,28 @@
 StoreBusinessId;StoreName;StoreDescription;Status;ManagerKey;GeographyKey
-1;Contoso Seattle No.1 Store;Contoso Seattle No.1 Store;On;35;693
-2;Contoso Seattle No.2 Store;Contoso Seattle No.2 Store;On;35;693
-3;Contoso Kennewick Store;Contoso Kennewick Store;On;36;856
-4;Contoso Bellevue Store;Contoso Bellevue Store;On;37;424
-5;Contoso Redmond Store;Contoso Redmond Store;On;38;677
-6;Contoso Yakima Store;Contoso Yakima Store;On;39;575
-7;Contoso Granger Store;Contoso Granger Store;On;40;838
-8;Contoso Sunnyside Store;Contoso Sunnyside Store;On;41;935
-9;Contoso Toppenish Store;Contoso Toppenish Store;On;42;941
-10;Contoso Wapato Store;Contoso Wapato Store;On;43;947
-11;Contoso Cle Elum Store;Contoso Cle Elum Store;On;44;813
-12;Contoso North Bend Store;Contoso North Bend Store;Off;45;893
-13;Contoso Snoqualmie Store;Contoso Snoqualmie Store;On;46;930
-14;Contoso Fall City Store;Contoso Fall City Store;On;47;825
-15;Contoso Renton Store;Contoso Renton Store;On;48;678
-16;Contoso Everett Store;Contoso Everett Store;On;49;627
-17;Contoso Spokane Store;Contoso Spokane Store;On;135;551
-18;Contoso Veradale Store;Contoso Veradale Store;On;50;944
-19;Contoso Cheney Store;Contoso Cheney Store;Off;51;812
-20;Contoso Englewood Store;Contoso Englewood Store;On;52;824
-21;Contoso Wheat Ridge Store;Contoso Wheat Ridge Store;On;66;950
-22;Contoso Westminster Store;Contoso Westminster Store;On;54;571
-23;Contoso Grand Junction Store;Contoso Grand Junction Store;On;55;836
-24;Contoso New Castle Store;Contoso New Castle Store;On;56;887
+1;Contoso Seattle No.1 Store;Contoso Seattle No.1 Store;On;40;571
+2;Contoso Seattle No.2 Store;Contoso Seattle No.2 Store;On;40;571
+3;Contoso Kennewick Store;Contoso Kennewick Store;On;40;571
+4;Contoso Bellevue Store;Contoso Bellevue Store;On;40;571
+5;Contoso Redmond Store;Contoso Redmond Store;On;40;571
+6;Contoso Yakima Store;Contoso Yakima Store;On;40;571
+7;Contoso Granger Store;Contoso Granger Store;On;40;571
+8;Contoso Sunnyside Store;Contoso Sunnyside Store;On;40;571
+9;Contoso Toppenish Store;Contoso Toppenish Store;On;40;571
+10;Contoso Wapato Store;Contoso Wapato Store;On;40;571
+11;Contoso Cle Elum Store;Contoso Cle Elum Store;On;40;571
+12;Contoso North Bend Store;Contoso North Bend Store;Off;40;571
+13;Contoso Snoqualmie Store;Contoso Snoqualmie Store;On;40;571
+14;Contoso Fall City Store;Contoso Fall City Store;On;40;571
+15;Contoso Renton Store;Contoso Renton Store;On;40;571
+16;Contoso Everett Store;Contoso Everett Store;On;40;571
+17;Contoso Spokane Store;Contoso Spokane Store;On;40;571
+18;Contoso Veradale Store;Contoso Veradale Store;On;40;571
+19;Contoso Cheney Store;Contoso Cheney Store;Off;40;571
+20;Contoso Englewood Store;Contoso Englewood Store;On;40;571
+21;Contoso Wheat Ridge Store;Contoso Wheat Ridge Store;On;40;571
+22;Contoso Westminster Store;Contoso Westminster Store;On;40;571
+23;Contoso Grand Junction Store;Contoso Grand Junction Store;On;40;836
+24;Contoso New Castle Store;Contoso New Castle Store;On;40;887
 25;Contoso Greeley  No.1 Store;Contoso Greeley  No.1 Store;On;57;839
 26;Contoso Loveland Store;Contoso Loveland Store;On;58;867
 27;Contoso Lafayette Store;Contoso Lafayette Store;On;59;859

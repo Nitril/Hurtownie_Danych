@@ -6,8 +6,8 @@
     [StoreDescription] VARCHAR (300) NULL,
     [Status]           VARCHAR (20)  NULL,
     [OpenDate]         DATETIME      NULL,
-    [CloseDate]        DATETIME      NULL,
-    [PckgStartTime]    DATETIME      NULL,
-    [RowStartTime]     DATETIME      NULL
+    [CloseDate]        DATETIME      NULL
 );
+
+
 

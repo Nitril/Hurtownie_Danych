@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="LocalHost.ContosoRetailDW"
+  DTS:ObjectName="SCD2_PL_DB"
   DTS:DTSID="{7538F440-75E2-4598-A335-DA28B957DFF9}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
