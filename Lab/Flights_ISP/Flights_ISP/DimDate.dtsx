@@ -11,20 +11,20 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimDate"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{ABB8B8A4-89A9-4A96-922B-5112D310807D}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{0C5A81C6-19B4-409C-9E3F-17AEC9E2DDBB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Execute SQL Task"
+      DTS:refId="Package\Populate DimDate"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{33799BDC-956F-4698-B9C2-D3AD29B890E0}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task"
+      DTS:ObjectName="Populate DimDate"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -32,13 +32,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute SQL Task 1"
+      DTS:refId="Package\Truncate DimDate"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{FD0BE8AD-62EF-4294-8D5D-F68EAB69631F}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task 1"
+      DTS:ObjectName="Truncate DimDate"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -51,10 +51,10 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{BB068DDC-1D5F-4806-9F71-70D3E99C759B}"
-      DTS:From="Package\Execute SQL Task 1"
+      DTS:From="Package\Truncate DimDate"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Execute SQL Task" />
+      DTS:To="Package\Populate DimDate" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -69,39 +69,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="250,171" />
+          Size="164,42"
+          Id="Package\Populate DimDate"
+          TopLeft="211,155" />
         <NodeLayout
-          Size="172,42"
-          Id="Package\Execute SQL Task 1"
+          Size="165,42"
+          Id="Package\Truncate DimDate"
           TopLeft="205,50" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="291,92">
+          TopLeft="290.25,92">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="40.5,79"
+              EndConnector="0,63"
               Start="0,0"
-              End="40.5,71.5">
+              End="0,55.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.5"
-                    Point2="0,39.5"
-                    Point3="4,39.5" />
-                  <mssgle:LineSegment
-                    End="36.5,39.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="36.5,39.5"
-                    Point2="40.5,39.5"
-                    Point3="40.5,43.5" />
-                  <mssgle:LineSegment
-                    End="40.5,71.5" />
+                    End="0,55.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

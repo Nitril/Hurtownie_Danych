@@ -21,7 +21,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Iata"
-          DTS:DTSID="{CBFB49FC-4587-423D-9E85-588007119E31}"
+          DTS:DTSID="{E44A7A7B-FBA6-4CC5-91A8-D4E5F79B7C8F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Airport"
-          DTS:DTSID="{7134B874-DF61-4B05-9D7B-DA0D54EE3D78}"
+          DTS:DTSID="{50797E40-BEF3-4D8B-A5BA-BF9A2D0E12A9}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="City"
-          DTS:DTSID="{28242236-2E05-483C-A15E-BE717F6D1BD8}"
+          DTS:DTSID="{2552839D-CFE2-4576-BA72-A7CE88AE0512}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="State"
-          DTS:DTSID="{D894414F-1F5D-42E4-A3CA-639BB008182C}"
+          DTS:DTSID="{CC9342B1-AFFE-47FF-BD7E-CA49C3B36BDD}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Country"
-          DTS:DTSID="{B656C101-D968-41AD-9724-8262CE627F4D}"
+          DTS:DTSID="{2349D21B-0268-41D7-922D-576AA1462752}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -67,7 +67,7 @@
           DTS:DataScale="10"
           DTS:TextQualified="True"
           DTS:ObjectName="Latitude"
-          DTS:DTSID="{6E206A46-9991-463D-B103-AFB917E1C79C}"
+          DTS:DTSID="{5D650F84-A0D8-46FC-A797-6E41C0087586}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
           DTS:DataScale="10"
           DTS:TextQualified="True"
           DTS:ObjectName="Longtitude"
-          DTS:DTSID="{FCDF0154-913E-4FCE-8388-2C55DA470D6A}"
+          DTS:DTSID="{30A0808D-F03B-4EB4-A43C-929AA93EB6C3}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
