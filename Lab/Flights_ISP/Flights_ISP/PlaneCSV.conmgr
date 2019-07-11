@@ -17,29 +17,29 @@
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="20"
-          DTS:DataType="129"
+          DTS:MaximumWidth="10"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Tail_number"
-          DTS:DTSID="{3D50AD16-8449-4D12-8149-8D514D0E426D}"
+          DTS:DTSID="{EA2DF849-5EF9-4F8C-B410-EF2D3D02A9AD}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:MaximumWidth="20"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Type"
-          DTS:DTSID="{7C183F13-6FD1-4699-A95C-BED695712E08}"
+          DTS:DTSID="{1D4D743F-B3B5-498B-B91F-9B5FE6689317}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:MaximumWidth="30"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Manufacturer"
-          DTS:DTSID="{4782820E-960F-4215-B5FB-E1DD2489A2F1}"
+          DTS:DTSID="{351244A2-C12E-4ADB-9F0D-F59D5E7A25CE}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -47,52 +47,52 @@
           DTS:DataType="7"
           DTS:TextQualified="True"
           DTS:ObjectName="Issue_date"
-          DTS:DTSID="{DAF86993-419B-4BA4-802C-823A13ADCDDA}"
+          DTS:DTSID="{CBF124C4-8FB8-4548-9B1A-CD62013A9009}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:MaximumWidth="20"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Model"
-          DTS:DTSID="{C6F288DC-96A7-452D-BEDF-04BE806B6274}"
+          DTS:DTSID="{95A0BFA5-98C9-4FF4-8A4A-7C1F2796942F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:MaximumWidth="20"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Status"
-          DTS:DTSID="{D4658D98-BCC2-47EF-BE65-559F77BC4B98}"
+          DTS:DTSID="{FDD787C9-E1C3-45BF-BE9B-B166E0E86284}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:MaximumWidth="30"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Aircraft_type"
-          DTS:DTSID="{8C04327C-8D06-48BE-9D9A-3CF97071D00C}"
+          DTS:DTSID="{29B48B7D-CA3D-4838-9149-26E16FD572B5}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:MaximumWidth="20"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Engine_type"
-          DTS:DTSID="{A1692053-4134-4D25-949B-092E6080FC16}"
+          DTS:DTSID="{F12FBA2B-D55B-4C9B-815A-64BB4D4A19C8}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x000A_"
-          DTS:MaximumWidth="10"
-          DTS:DataType="129"
+          DTS:MaximumWidth="4"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Year"
-          DTS:DTSID="{1099C479-0492-4628-824B-5AB4677B9018}"
+          DTS:DTSID="{D845C6E8-0976-46E2-948D-818355E0050D}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

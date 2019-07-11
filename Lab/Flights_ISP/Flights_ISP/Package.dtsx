@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{B0CCDBCB-3344-4BC6-A8DF-38FEBFB3CB64}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{F95335BB-94D3-4790-B4F3-741C556FF00B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -44,12 +44,459 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Facts"
+              refId="Package\Data Flow Task\FactFlights"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="FactFlights"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactFlights]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\FactFlights.Connections[OleDbConnection]"
+                  connectionManagerID="{02F9332B-85A1-489E-A561-7C31690896F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[FlightsDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[Year]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="Year"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[Month]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="Month"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Month]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[DayofMonth]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="DayofMonth"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[DayofMonth]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[DayofMonth]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[DayOfWeek]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DayOfWeek"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[DayOfWeek]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[DayOfWeek]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[DepTime]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="DepTime"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[DepTime]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[DepTime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[CRSDepTime]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="CRSDepTime"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[CRSDepTime]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[CRSDepTime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[ArrTime]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="ArrTime"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[ArrTime]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[ArrTime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[CRSArrTime]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="CRSArrTime"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[CRSArrTime]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[CRSArrTime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[UniqueCarrier]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="UniqueCarrier"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[UniqueCarrier]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[UniqueCarrier]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[FlightNum]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="FlightNum"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[FlightNum]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[FlightNum]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[TailNum]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="TailNum"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[TailNum]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[TailNum]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[ActualElapsedTime]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="ActualElapsedTime"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[ActualElapsedTime]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[ActualElapsedTime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[CRSElapsedTime]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="CRSElapsedTime"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[CRSElapsedTime]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[CRSElapsedTime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[AirTime]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="AirTime"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[AirTime]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[AirTime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[ArrDelay]"
+                      cachedDataType="wstr"
+                      cachedLength="7"
+                      cachedName="ArrDelay"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[ArrDelay]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[ArrDelay]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[DepDelay]"
+                      cachedDataType="wstr"
+                      cachedLength="7"
+                      cachedName="DepDelay"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[DepDelay]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[DepDelay]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[Origin]"
+                      cachedDataType="wstr"
+                      cachedLength="7"
+                      cachedName="Origin"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[Origin]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Origin]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[Dest]"
+                      cachedDataType="wstr"
+                      cachedLength="7"
+                      cachedName="Dest"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[Dest]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Dest]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[Distance]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="Distance"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Distance]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[TaxiIn]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="TaxiIn"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[TaxiIn]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[TaxiIn]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[TaxiOut]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="TaxiOut"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[TaxiOut]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[TaxiOut]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[Cancelled]"
+                      cachedDataType="bool"
+                      cachedName="Cancelled"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[Cancelled]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Cancelled]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[CancellationCode]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CancellationCode"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[CancellationCode]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[CancellationCode]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[Diverted]"
+                      cachedDataType="bool"
+                      cachedName="Diverted"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[Diverted]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Diverted]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[CarrierDelay]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="CarrierDelay"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[CarrierDelay]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[CarrierDelay]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[WeatherDelay]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="WeatherDelay"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[WeatherDelay]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[WeatherDelay]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[NASDelay]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="NASDelay"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[NASDelay]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[NASDelay]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[SecurityDelay]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="SecurityDelay"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[SecurityDelay]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[SecurityDelay]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].Columns[LateAircraftDelay]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="LateAircraftDelay"
+                      externalMetadataColumnId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[LateAircraftDelay]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[LateAircraftDelay]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      dataType="wstr"
+                      length="4"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                      dataType="wstr"
+                      length="2"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[DayofMonth]"
+                      dataType="wstr"
+                      length="2"
+                      name="DayofMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[DayOfWeek]"
+                      dataType="wstr"
+                      length="1"
+                      name="DayOfWeek" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[DepTime]"
+                      dataType="wstr"
+                      length="8"
+                      name="DepTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[CRSDepTime]"
+                      dataType="wstr"
+                      length="8"
+                      name="CRSDepTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[ArrTime]"
+                      dataType="wstr"
+                      length="8"
+                      name="ArrTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[CRSArrTime]"
+                      dataType="wstr"
+                      length="8"
+                      name="CRSArrTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[UniqueCarrier]"
+                      dataType="wstr"
+                      length="10"
+                      name="UniqueCarrier" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[FlightNum]"
+                      dataType="wstr"
+                      length="6"
+                      name="FlightNum" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[TailNum]"
+                      dataType="wstr"
+                      length="10"
+                      name="TailNum" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[ActualElapsedTime]"
+                      dataType="wstr"
+                      length="4"
+                      name="ActualElapsedTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[CRSElapsedTime]"
+                      dataType="wstr"
+                      length="4"
+                      name="CRSElapsedTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[AirTime]"
+                      dataType="wstr"
+                      length="4"
+                      name="AirTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[ArrDelay]"
+                      dataType="wstr"
+                      length="7"
+                      name="ArrDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[DepDelay]"
+                      dataType="wstr"
+                      length="7"
+                      name="DepDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[Origin]"
+                      dataType="wstr"
+                      length="7"
+                      name="Origin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[Dest]"
+                      dataType="wstr"
+                      length="7"
+                      name="Dest" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                      dataType="wstr"
+                      length="4"
+                      name="Distance" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[TaxiIn]"
+                      dataType="wstr"
+                      length="4"
+                      name="TaxiIn" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[TaxiOut]"
+                      dataType="wstr"
+                      length="4"
+                      name="TaxiOut" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[Cancelled]"
+                      dataType="bool"
+                      name="Cancelled" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[CancellationCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="CancellationCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[Diverted]"
+                      dataType="bool"
+                      name="Diverted" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[CarrierDelay]"
+                      dataType="wstr"
+                      length="4"
+                      name="CarrierDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[WeatherDelay]"
+                      dataType="wstr"
+                      length="4"
+                      name="WeatherDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[NASDelay]"
+                      dataType="wstr"
+                      length="4"
+                      name="NASDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[SecurityDelay]"
+                      dataType="wstr"
+                      length="4"
+                      name="SecurityDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input].ExternalColumns[LateAircraftDelay]"
+                      dataType="wstr"
+                      length="4"
+                      name="LateAircraftDelay" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\FactFlights.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\FactFlights.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\FactFlights.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\FactFlights.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\FactFlights.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\FlightsCSV"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="1045"
-              name="Facts"
+              name="FlightsCSV"
               usesDispositions="true"
               version="1">
               <properties>
@@ -64,23 +511,24 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Facts.Connections[FlatFileConnection]"
+                  refId="Package\Data Flow Task\FlightsCSV.Connections[FlatFileConnection]"
                   connectionManagerID="{B786C98C-9AC8-408B-92A0-44CC9632AC23}:external"
                   connectionManagerRefId="Project.ConnectionManagers[FactFlightsCSVFiles]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output]"
+                  refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[Year]"
-                      dataType="i4"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Year]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[Year]"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[Year]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[Year]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Year]"
                       name="Year"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -95,12 +543,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[Month]"
-                      dataType="i2"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Month]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[Month]"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[Month]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[Month]"
+                      length="2"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Month]"
                       name="Month"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -115,12 +564,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[DayofMonth]"
-                      dataType="i2"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[DayofMonth]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[DayofMonth]"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[DayofMonth]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[DayofMonth]"
+                      length="2"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[DayofMonth]"
                       name="DayofMonth"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -135,12 +585,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[DayOfWeek]"
-                      dataType="i2"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[DayOfWeek]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[DayOfWeek]"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[DayOfWeek]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[DayOfWeek]"
+                      length="1"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[DayOfWeek]"
                       name="DayOfWeek"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -155,14 +606,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[DepTime]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[DepTime]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[DepTime]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[DepTime]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[DepTime]"
+                      length="8"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[DepTime]"
                       name="DepTime"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -177,14 +627,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[CRSDepTime]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[CRSDepTime]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[CRSDepTime]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[CRSDepTime]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[CRSDepTime]"
+                      length="8"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[CRSDepTime]"
                       name="CRSDepTime"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -199,14 +648,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[ArrTime]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[ArrTime]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[ArrTime]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[ArrTime]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[ArrTime]"
+                      length="8"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[ArrTime]"
                       name="ArrTime"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -221,14 +669,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[CRSArrTime]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[CRSArrTime]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[CRSArrTime]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[CRSArrTime]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[CRSArrTime]"
+                      length="8"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[CRSArrTime]"
                       name="CRSArrTime"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -243,14 +690,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[UniqueCarrier]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[UniqueCarrier]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[UniqueCarrier]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[UniqueCarrier]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[UniqueCarrier]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[UniqueCarrier]"
                       name="UniqueCarrier"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -265,14 +711,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[FlightNum]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[FlightNum]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[FlightNum]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[FlightNum]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[FlightNum]"
+                      length="6"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[FlightNum]"
                       name="FlightNum"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -287,14 +732,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[TailNum]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[TailNum]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[TailNum]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[TailNum]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[TailNum]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[TailNum]"
                       name="TailNum"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -309,14 +753,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[ActualElapsedTime]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[ActualElapsedTime]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[ActualElapsedTime]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[ActualElapsedTime]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[ActualElapsedTime]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[ActualElapsedTime]"
                       name="ActualElapsedTime"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -331,14 +774,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[CRSElapsedTime]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[CRSElapsedTime]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[CRSElapsedTime]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[CRSElapsedTime]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[CRSElapsedTime]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[CRSElapsedTime]"
                       name="CRSElapsedTime"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -353,14 +795,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[AirTime]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[AirTime]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[AirTime]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[AirTime]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[AirTime]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[AirTime]"
                       name="AirTime"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -375,14 +816,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[ArrDelay]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[ArrDelay]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[ArrDelay]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[ArrDelay]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[ArrDelay]"
+                      length="7"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[ArrDelay]"
                       name="ArrDelay"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -397,14 +837,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[DepDelay]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[DepDelay]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[DepDelay]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[DepDelay]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[DepDelay]"
+                      length="7"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[DepDelay]"
                       name="DepDelay"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -419,14 +858,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[Origin]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Origin]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[Origin]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[Origin]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[Origin]"
+                      length="7"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Origin]"
                       name="Origin"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -441,14 +879,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[Dest]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Dest]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[Dest]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[Dest]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[Dest]"
+                      length="7"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Dest]"
                       name="Dest"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -463,14 +900,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[Distance]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Distance]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[Distance]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[Distance]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[Distance]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Distance]"
                       name="Distance"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -485,14 +921,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[TaxiIn]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[TaxiIn]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[TaxiIn]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[TaxiIn]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[TaxiIn]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[TaxiIn]"
                       name="TaxiIn"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -507,14 +942,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[TaxiOut]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[TaxiOut]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[TaxiOut]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[TaxiOut]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[TaxiOut]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[TaxiOut]"
                       name="TaxiOut"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -529,14 +963,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[Cancelled]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Cancelled]"
+                      dataType="bool"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[Cancelled]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[Cancelled]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[Cancelled]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Cancelled]"
                       name="Cancelled"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -551,14 +983,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[CancellationCode]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[CancellationCode]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[CancellationCode]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[CancellationCode]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[CancellationCode]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[CancellationCode]"
                       name="CancellationCode"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -573,14 +1004,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[Diverted]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Diverted]"
+                      dataType="bool"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[Diverted]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[Diverted]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[Diverted]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[Diverted]"
                       name="Diverted"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -595,14 +1024,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[CarrierDelay]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[CarrierDelay]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[CarrierDelay]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[CarrierDelay]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[CarrierDelay]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[CarrierDelay]"
                       name="CarrierDelay"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -617,14 +1045,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[WeatherDelay]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[WeatherDelay]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[WeatherDelay]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[WeatherDelay]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[WeatherDelay]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[WeatherDelay]"
                       name="WeatherDelay"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -639,14 +1066,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[NASDelay]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[NASDelay]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[NASDelay]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[NASDelay]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[NASDelay]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[NASDelay]"
                       name="NASDelay"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -661,14 +1087,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[SecurityDelay]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[SecurityDelay]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[SecurityDelay]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[SecurityDelay]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[SecurityDelay]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[SecurityDelay]"
                       name="SecurityDelay"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -683,14 +1108,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[LateAircraftDelay]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[LateAircraftDelay]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[LateAircraftDelay]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].Columns[LateAircraftDelay]"
+                      externalMetadataColumnId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[LateAircraftDelay]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].Columns[LateAircraftDelay]"
                       name="LateAircraftDelay"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -708,172 +1132,172 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[Year]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[Year]"
                       dataType="wstr"
                       length="4"
                       name="Year" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[Month]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[Month]"
                       dataType="wstr"
                       length="2"
                       name="Month" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[DayofMonth]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[DayofMonth]"
                       dataType="wstr"
                       length="2"
                       name="DayofMonth" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[DayOfWeek]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[DayOfWeek]"
                       dataType="wstr"
                       length="1"
                       name="DayOfWeek" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[DepTime]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[DepTime]"
                       dataType="wstr"
                       length="8"
                       name="DepTime" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[CRSDepTime]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[CRSDepTime]"
                       dataType="wstr"
                       length="8"
                       name="CRSDepTime" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[ArrTime]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[ArrTime]"
                       dataType="wstr"
                       length="8"
                       name="ArrTime" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[CRSArrTime]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[CRSArrTime]"
                       dataType="wstr"
                       length="8"
                       name="CRSArrTime" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[UniqueCarrier]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[UniqueCarrier]"
                       dataType="wstr"
                       length="10"
                       name="UniqueCarrier" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[FlightNum]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[FlightNum]"
                       dataType="wstr"
                       length="6"
                       name="FlightNum" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[TailNum]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[TailNum]"
                       dataType="wstr"
                       length="10"
                       name="TailNum" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[ActualElapsedTime]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[ActualElapsedTime]"
                       dataType="wstr"
                       length="4"
                       name="ActualElapsedTime" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[CRSElapsedTime]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[CRSElapsedTime]"
                       dataType="wstr"
                       length="4"
                       name="CRSElapsedTime" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[AirTime]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[AirTime]"
                       dataType="wstr"
                       length="4"
                       name="AirTime" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[ArrDelay]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[ArrDelay]"
                       dataType="wstr"
                       length="7"
                       name="ArrDelay" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[DepDelay]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[DepDelay]"
                       dataType="wstr"
                       length="7"
                       name="DepDelay" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[Origin]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[Origin]"
                       dataType="wstr"
                       length="7"
                       name="Origin" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[Dest]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[Dest]"
                       dataType="wstr"
                       length="7"
                       name="Dest" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[Distance]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[Distance]"
                       dataType="wstr"
                       length="4"
                       name="Distance" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[TaxiIn]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[TaxiIn]"
                       dataType="wstr"
                       length="4"
                       name="TaxiIn" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[TaxiOut]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[TaxiOut]"
                       dataType="wstr"
                       length="4"
                       name="TaxiOut" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[Cancelled]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[Cancelled]"
                       dataType="bool"
                       name="Cancelled" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[CancellationCode]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[CancellationCode]"
                       dataType="wstr"
                       length="10"
                       name="CancellationCode" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[Diverted]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[Diverted]"
                       dataType="bool"
                       name="Diverted" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[CarrierDelay]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[CarrierDelay]"
                       dataType="wstr"
                       length="4"
                       name="CarrierDelay" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[WeatherDelay]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[WeatherDelay]"
                       dataType="wstr"
                       length="4"
                       name="WeatherDelay" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[NASDelay]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[NASDelay]"
                       dataType="wstr"
                       length="4"
                       name="NASDelay" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[SecurityDelay]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[SecurityDelay]"
                       dataType="wstr"
                       length="4"
                       name="SecurityDelay" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Output].ExternalColumns[LateAircraftDelay]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output].ExternalColumns[LateAircraftDelay]"
                       dataType="wstr"
                       length="4"
                       name="LateAircraftDelay" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Error Output]"
+                  refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      codePage="1252"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1250"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Facts.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Facts.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -882,6 +1306,13 @@
               </outputs>
             </component>
           </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task\FactFlights.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task\FlightsCSV.Outputs[Flat File Source Output]" />
+          </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -909,13 +1340,52 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="103,42"
-          Id="Package\Data Flow Task\Facts"
-          TopLeft="140,120" />
+          Size="129,42"
+          Id="Package\Data Flow Task\FactFlights"
+          TopLeft="125,284" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\Data Flow Task\FlightsCSV"
+          TopLeft="121,107" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="187.25,149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,135"
+              Start="0,0"
+              End="0,127.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,127.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\FactFlights">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

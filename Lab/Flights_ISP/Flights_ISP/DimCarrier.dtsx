@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimCarrier"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{4077587A-F499-4E78-9385-43572DBD8CD5}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{EEF3A0ED-C0FB-4D21-A8AB-7E1DFB4B2DF0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -32,12 +32,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Carriers"
+              refId="Package\Data Flow Task\CarriersCSV"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="1033"
-              name="Carriers"
+              name="CarriersCSV"
               usesDispositions="true"
               version="1">
               <properties>
@@ -52,25 +52,24 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Carriers.Connections[FlatFileConnection]"
-                  connectionManagerID="{AE2FD8EA-E9C2-4B10-A3B2-132696E352BC}:invalid"
-                  connectionManagerRefId="{AE2FD8EA-E9C2-4B10-A3B2-132696E352BC}:invalid"
+                  refId="Package\Data Flow Task\CarriersCSV.Connections[FlatFileConnection]"
+                  connectionManagerID="{B48DFB39-BFF6-4A50-8877-E2CA57C4FB85}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Carriers]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Output]"
+                  refId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Output].Columns[Code]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Output].Columns[Code]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Output].ExternalColumns[Code]"
-                      length="20"
-                      lineageId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Output].Columns[Code]"
+                      externalMetadataColumnId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Output].ExternalColumns[Code]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Output].Columns[Code]"
                       name="Code"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -85,14 +84,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Output].Columns[Description]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Output].Columns[Description]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                      externalMetadataColumnId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Output].ExternalColumns[Description]"
                       length="100"
-                      lineageId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Output].Columns[Description]"
+                      lineageId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Output].Columns[Description]"
                       name="Description"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -110,41 +108,39 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Output].ExternalColumns[Code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
+                      refId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Output].ExternalColumns[Code]"
+                      dataType="wstr"
+                      length="10"
                       name="Code" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Output].ExternalColumns[Description]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                      dataType="wstr"
                       length="100"
                       name="Description" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Error Output]"
+                  refId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      codePage="1250"
+                      refId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -153,11 +149,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination 1"
+              refId="Package\Data Flow Task\DimCarrier"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB Destination 1"
+              name="DimCarrier"
               usesDispositions="true"
               version="4">
               <properties>
@@ -168,7 +164,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[DimCarriers]</property>
+                  name="OpenRowset">[DimCarrier]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -194,11 +190,11 @@
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
+                  name="FastLoadKeepIdentity">true</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
+                  name="FastLoadKeepNulls">true</property>
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
@@ -210,72 +206,72 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination 1.Connections[OleDbConnection]"
-                  connectionManagerID="{F43603B3-9EA5-46E8-82D6-E7DA9E7AE387}:invalid"
-                  connectionManagerRefId="{F43603B3-9EA5-46E8-82D6-E7DA9E7AE387}:invalid"
+                  refId="Package\Data Flow Task\DimCarrier.Connections[OleDbConnection]"
+                  connectionManagerID="{02F9332B-85A1-489E-A561-7C31690896F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[FlightsDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  refId="Package\Data Flow Task\DimCarrier.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Code]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
+                      refId="Package\Data Flow Task\DimCarrier.Inputs[OLE DB Destination Input].Columns[Code]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
                       cachedName="Code"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Code]"
-                      lineageId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Output].Columns[Code]" />
+                      externalMetadataColumnId="Package\Data Flow Task\DimCarrier.Inputs[OLE DB Destination Input].ExternalColumns[Code]"
+                      lineageId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Output].Columns[Code]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Description]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\Data Flow Task\DimCarrier.Inputs[OLE DB Destination Input].Columns[Description]"
+                      cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="Description"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
-                      lineageId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Output].Columns[Description]" />
+                      externalMetadataColumnId="Package\Data Flow Task\DimCarrier.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Output].Columns[Description]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
+                      refId="Package\Data Flow Task\DimCarrier.Inputs[OLE DB Destination Input].ExternalColumns[Code]"
+                      dataType="wstr"
+                      length="10"
                       name="Code" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\DimCarrier.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      dataType="wstr"
                       length="100"
                       name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DimCarrier.Inputs[OLE DB Destination Input].ExternalColumns[CarrierID]"
+                      dataType="i4"
+                      name="CarrierID" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow Task\DimCarrier.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Data Flow Task\DimCarrier.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\DimCarrier.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\DimCarrier.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\DimCarrier.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\DimCarrier.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -287,9 +283,9 @@
           <paths>
             <path
               refId="Package\Data Flow Task.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow Task\DimCarrier.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Data Flow Task\Carriers.Outputs[Flat File Source Output]" />
+              startId="Package\Data Flow Task\CarriersCSV.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -371,39 +367,39 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="115,42"
-          Id="Package\Data Flow Task\Carriers"
-          TopLeft="60,60" />
+          Size="129,42"
+          Id="Package\Data Flow Task\DimCarrier"
+          TopLeft="244,350" />
         <NodeLayout
-          Size="180,42"
-          Id="Package\Data Flow Task\OLE DB Destination 1"
-          TopLeft="93,340" />
+          Size="134,42"
+          Id="Package\Data Flow Task\CarriersCSV"
+          TopLeft="281,63" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="117.5,102">
+          TopLeft="348,105">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="65.5,238"
+              EndConnector="-39.5,245"
               Start="0,0"
-              End="65.5,230.5">
+              End="-39.5,237.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,115" />
+                    End="0,118.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,115"
-                    Point2="0,119"
-                    Point3="4,119" />
+                    Point1="0,118.5"
+                    Point2="0,122.5"
+                    Point3="-4,122.5" />
                   <mssgle:LineSegment
-                    End="61.5,119" />
+                    End="-35.5,122.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="61.5,119"
-                    Point2="65.5,119"
-                    Point3="65.5,123" />
+                    Point1="-35.5,122.5"
+                    Point2="-39.5,122.5"
+                    Point3="-39.5,126.5" />
                   <mssgle:LineSegment
-                    End="65.5,230.5" />
+                    End="-39.5,237.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -415,5 +411,18 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\DimCarrier">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

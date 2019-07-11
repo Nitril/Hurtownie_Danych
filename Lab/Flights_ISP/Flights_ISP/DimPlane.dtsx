@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimPlane"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{7C8B26EF-175C-4815-8441-BC16A235DA74}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{1D3C156B-9F6B-47DF-9FA5-8905B76DD7B8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -32,11 +32,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination 2"
+              refId="Package\Data Flow Task\DimPlane"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB Destination 2"
+              name="DimPlane"
               usesDispositions="true"
               version="4">
               <properties>
@@ -47,7 +47,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[DimPlain]</property>
+                  name="OpenRowset">[DimPlane]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -73,11 +73,11 @@
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
+                  name="FastLoadKeepIdentity">true</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
+                  name="FastLoadKeepNulls">true</property>
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
@@ -89,162 +89,154 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination 2.Connections[OleDbConnection]"
-                  connectionManagerID="{F43603B3-9EA5-46E8-82D6-E7DA9E7AE387}:invalid"
-                  connectionManagerRefId="{F43603B3-9EA5-46E8-82D6-E7DA9E7AE387}:invalid"
+                  refId="Package\Data Flow Task\DimPlane.Connections[OleDbConnection]"
+                  connectionManagerID="{02F9332B-85A1-489E-A561-7C31690896F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[FlightsDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input]"
+                  refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[Tailnum]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="Tailnum"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Tailnum]"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Tailnum]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[Type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
                       cachedName="Type"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Type]" />
+                      externalMetadataColumnId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Type]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[Manufacturer]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].Columns[Manufacturer]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
                       cachedName="Manufacturer"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Manufacturer]"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Manufacturer]" />
+                      externalMetadataColumnId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Manufacturer]"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Manufacturer]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[Issue_date]"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].Columns[Issue_date]"
                       cachedDataType="date"
                       cachedName="Issue_date"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Issue_date]"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Issue_date]" />
+                      externalMetadataColumnId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Issue_date]"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Issue_date]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[Model]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].Columns[Model]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
                       cachedName="Model"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Model]"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Model]" />
+                      externalMetadataColumnId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Model]"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Model]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[Status]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
                       cachedName="Status"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Status]" />
+                      externalMetadataColumnId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Status]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[Aircraft_type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].Columns[Aircraft_type]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
                       cachedName="Aircraft_type"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Aircraft_type]"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Aircraft_type]" />
+                      externalMetadataColumnId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Aircraft_type]"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Aircraft_type]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[Engine_type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].Columns[Engine_type]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
                       cachedName="Engine_type"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Engine_type]"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Engine_type]" />
+                      externalMetadataColumnId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Engine_type]"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Engine_type]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[Year]"
-                      cachedDataType="i4"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].Columns[Year]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
                       cachedName="Year"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Year]" />
+                      externalMetadataColumnId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].Columns[Tail_number]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Tail_number"
+                      externalMetadataColumnId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[TailNum]"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Tail_number]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Tailnum]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="Tailnum" />
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[PlaneInfoID]"
+                      dataType="i4"
+                      name="PlaneInfoID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[TailNum]"
+                      dataType="wstr"
+                      length="10"
+                      name="TailNum" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      dataType="wstr"
+                      length="20"
                       name="Type" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Manufacturer]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Manufacturer]"
+                      dataType="wstr"
+                      length="30"
                       name="Manufacturer" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Issue_date]"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Issue_date]"
                       dataType="dbTimeStamp"
                       name="Issue_date" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Model]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Model]"
+                      dataType="wstr"
+                      length="20"
                       name="Model" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="20"
                       name="Status" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Aircraft_type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Aircraft_type]"
+                      dataType="wstr"
+                      length="30"
                       name="Aircraft_type" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Engine_type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Engine_type]"
+                      dataType="wstr"
+                      length="20"
                       name="Engine_type" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
-                      dataType="i4"
+                      refId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      dataType="wstr"
+                      length="4"
                       name="Year" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow Task\DimPlane.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\DimPlane.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\DimPlane.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\DimPlane.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\DimPlane.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -253,12 +245,12 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Plane"
+              refId="Package\Data Flow Task\PlaneDataCSV"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="1033"
-              name="Plane"
+              name="PlaneDataCSV"
               usesDispositions="true"
               version="1">
               <properties>
@@ -273,26 +265,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Plane.Connections[FlatFileConnection]"
-                  connectionManagerID="{475ADA03-C452-4F2C-A342-F0AED30DFD6E}:invalid"
-                  connectionManagerRefId="{475ADA03-C452-4F2C-A342-F0AED30DFD6E}:invalid"
+                  refId="Package\Data Flow Task\PlaneDataCSV.Connections[FlatFileConnection]"
+                  connectionManagerID="{854E97EB-54FA-459F-B1FA-AEC0143884B6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[PlaneCSV]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output]"
+                  refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Tailnum]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Tail_number]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Tailnum]"
+                      externalMetadataColumnId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Tail_number]"
                       length="10"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Tailnum]"
-                      name="Tailnum"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Tail_number]"
+                      name="Tail_number"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -306,14 +297,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Type]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Type]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Type]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Type]"
+                      externalMetadataColumnId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Type]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Type]"
                       name="Type"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -328,14 +318,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Manufacturer]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Manufacturer]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Manufacturer]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Manufacturer]"
+                      externalMetadataColumnId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Manufacturer]"
+                      length="30"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Manufacturer]"
                       name="Manufacturer"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -350,12 +339,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Issue_date]"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Issue_date]"
                       dataType="date"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Issue_date]"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Issue_date]"
+                      externalMetadataColumnId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Issue_date]"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Issue_date]"
                       name="Issue_date"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -370,14 +359,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Model]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Model]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Model]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Model]"
+                      externalMetadataColumnId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Model]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Model]"
                       name="Model"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -392,14 +380,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Status]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Status]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Status]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Status]"
+                      externalMetadataColumnId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Status]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Status]"
                       name="Status"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -414,14 +401,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Aircraft_type]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Aircraft_type]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Aircraft_type]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Aircraft_type]"
+                      externalMetadataColumnId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Aircraft_type]"
+                      length="30"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Aircraft_type]"
                       name="Aircraft_type"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -436,14 +422,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Engine_type]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Engine_type]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Engine_type]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Engine_type]"
+                      externalMetadataColumnId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Engine_type]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Engine_type]"
                       name="Engine_type"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -458,12 +443,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Year]"
-                      dataType="i4"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Year]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Year]"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].Columns[Year]"
+                      externalMetadataColumnId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Year]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].Columns[Year]"
                       name="Year"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -481,79 +467,73 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Tailnum]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Tail_number]"
+                      dataType="wstr"
                       length="10"
-                      name="Tailnum" />
+                      name="Tail_number" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Type]"
+                      dataType="wstr"
+                      length="20"
                       name="Type" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Manufacturer]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Manufacturer]"
+                      dataType="wstr"
+                      length="30"
                       name="Manufacturer" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Issue_date]"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Issue_date]"
                       dataType="date"
                       name="Issue_date" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Model]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Model]"
+                      dataType="wstr"
+                      length="20"
                       name="Model" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Status]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="20"
                       name="Status" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Aircraft_type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Aircraft_type]"
+                      dataType="wstr"
+                      length="30"
                       name="Aircraft_type" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Engine_type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Engine_type]"
+                      dataType="wstr"
+                      length="20"
                       name="Engine_type" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output].ExternalColumns[Year]"
-                      dataType="i4"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output].ExternalColumns[Year]"
+                      dataType="wstr"
+                      length="4"
                       name="Year" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Error Output]"
+                  refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      codePage="1250"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Plane.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Plane.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -565,9 +545,9 @@
           <paths>
             <path
               refId="Package\Data Flow Task.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow Task\DimPlane.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Data Flow Task\Plane.Outputs[Flat File Source Output]" />
+              startId="Package\Data Flow Task\PlaneDataCSV.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -660,27 +640,39 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="180,42"
-          Id="Package\Data Flow Task\OLE DB Destination 2"
-          TopLeft="205,339" />
+          Size="145,42"
+          Id="Package\Data Flow Task\PlaneDataCSV"
+          TopLeft="329,153" />
         <NodeLayout
-          Size="104,42"
-          Id="Package\Data Flow Task\Plane"
-          TopLeft="241,104" />
+          Size="123,42"
+          Id="Package\Data Flow Task\DimPlane"
+          TopLeft="376,317" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="294,146">
+          TopLeft="401.5,195">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,193"
+              EndConnector="36,122"
               Start="0,0"
-              End="0,185.5">
+              End="36,114.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,185.5" />
+                    End="0,57" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,57"
+                    Point2="0,61"
+                    Point3="4,61" />
+                  <mssgle:LineSegment
+                    End="32,61" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32,61"
+                    Point2="36,61"
+                    Point3="36,65" />
+                  <mssgle:LineSegment
+                    End="36,114.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -692,5 +684,18 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\DimPlane">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
